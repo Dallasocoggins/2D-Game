@@ -68,7 +68,7 @@ public class Enemy : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D _colInfo)
     {
         Player _player = _colInfo.collider.GetComponent<Player>();
-        if(_player != null)
+        if(_player != null && _player.getCurHealth() > 0)
         {
             _player.DamagePlayer(stats.damage);
             DamageEnemy(999999);

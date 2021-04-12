@@ -45,7 +45,7 @@ public class EnemyAI : MonoBehaviour
         {
             if (!searchingForPlayer)
             {
-                Debug.Log("Hey");
+                Debug.Log("Searching for player");
                 searchingForPlayer = true;
                 StartCoroutine(SearchForPlayer());
             }
@@ -53,7 +53,7 @@ public class EnemyAI : MonoBehaviour
         }
 
         //Start a new path to the target pos. then return the result to the OnPathComplete method
-        seeker.StartPath(transform.position, target.position, OnPathComplete);
+        seeker.StartPath(target.position, target.position, OnPathComplete);
 
         StartCoroutine(UpdatePath());
     }
@@ -87,8 +87,11 @@ public class EnemyAI : MonoBehaviour
             }
             yield return false;
         }
-        //Start a new path to the target pos. then return the result to the OnPathComplete method
-        seeker.StartPath(transform.position, target.position, OnPathComplete);
+        else
+        {
+            //Start a new path to the target pos. then return the result to the OnPathComplete method
+            seeker.StartPath(transform.position, target.position, OnPathComplete);
+        }
 
         yield return new WaitForSeconds(1f/updateRate);
         StartCoroutine(UpdatePath());
@@ -110,7 +113,7 @@ public class EnemyAI : MonoBehaviour
         {
             if (!searchingForPlayer)
             {
-                Debug.Log("Hey4");
+                Debug.Log("Searching for player");
                 searchingForPlayer = true;
                 StartCoroutine(SearchForPlayer());
             }

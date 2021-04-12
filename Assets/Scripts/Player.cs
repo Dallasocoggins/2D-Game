@@ -52,6 +52,12 @@ public class Player : MonoBehaviour
             DamagePlayer(99999);
         }
     }
+
+    public int getCurHealth()
+    {
+        return stats.curHealth;
+    }
+
     public void DamagePlayer(int damage)
     {
         stats.curHealth -= damage;
@@ -59,6 +65,7 @@ public class Player : MonoBehaviour
 
         if (stats.curHealth <= 0)
         {
+            Debug.Log("Player: Killing Player");
             GameMaster.KillPlayer(this);
         }
     }

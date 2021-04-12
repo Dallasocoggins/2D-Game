@@ -38,6 +38,15 @@ TextureImporter:
   - first:
       213: -3355605324767024174
     second: AstronautSpriteAtlas_11
+  - first:
+      213: 3901289097108940419
+    second: GrenadeLauncher
+  - first:
+      213: 6098007034100408090
+    second: Grenade01
+  - first:
+      213: 5588139051072664769
+    second: Grenade02
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -372,6 +381,69 @@ TextureImporter:
       bones: []
       spriteID: 2db2ad26cbe7e61d0800000000000000
       internalID: -3355605324767024174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrenadeLauncher
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 157
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 386684f83c9242630800000000000000
+      internalID: 3901289097108940419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grenade01
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 149
+        width: 2
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1f5361c61970a450800000000000000
+      internalID: 6098007034100408090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grenade02
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 149
+        width: 1
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c4bca61cde0d8d40800000000000000
+      internalID: 5588139051072664769
       vertices: []
       indices: 
       edges: []

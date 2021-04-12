@@ -13,6 +13,8 @@ public class Weapon : MonoBehaviour
     float timeToFire = 0;
     Transform firePoint;
 
+    string Button = "Fire1";
+
     // Use this for initialization
     void Awake()
     {
@@ -28,14 +30,14 @@ public class Weapon : MonoBehaviour
     {
         if (fireRate == 0)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown(Button))
             {
                 StartCoroutine(Shoot());
             }
         }
         else
         {
-            if (Input.GetButton("Fire1") && Time.time > timeToFire)
+            if (Input.GetButton(Button) && Time.time > timeToFire)
             {
                 timeToFire = Time.time + 1 / fireRate;
                 StartCoroutine(Shoot());
