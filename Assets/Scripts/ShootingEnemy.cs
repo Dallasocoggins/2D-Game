@@ -31,6 +31,8 @@ public class ShootingEnemy : Enemy
 
     private Rigidbody2D rb;
 
+    public Transform groundDetectionRight;
+    public Transform groundDetectionLeft;
 
     // Start is called before the first frame update
     void Start()
@@ -58,11 +60,26 @@ public class ShootingEnemy : Enemy
     // Update is called once per frame
     void Update()
     {
-        if (isWallNearRight || isWallNearLeft)
+        RaycastHit2D groundInfoRight = Physics2D.Raycast(groundDetectionRight.position, Vector2.down, 2f);
+        RaycastHit2D groundInfoLeft = Physics2D.Raycast(groundDetectionLeft.position, Vector2.down, 2f);
+
+        if (groundInfoLeft.collider == false && groundInfoRight.collider == false)
+        {
+            
+        }
+        else if(isWallNearRight || isWallNearLeft)
         {
             rb.velocity = Vector2.up * jumpForce;
 
-        } else if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
+        } else if (groundInfoRight.collider == false)
+        {
+            rb.velocity = Vector2.left;
+        }
+        else if (groundInfoLeft.collider == false)
+        {
+            rb.velocity = Vector2.right;
+        }
+        else if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
 
@@ -113,6 +130,11 @@ public class ShootingEnemy : Enemy
         {
             statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D _colInfo)
+    {
+        //Nothing is here because otherwise it would inheret the exploding from the enemy class
     }
 
 }

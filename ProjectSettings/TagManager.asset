@@ -6,6 +6,8 @@ TagManager:
   tags:
   - GM
   - Enemy
+  - Ground
+  - JumpPad
   layers:
   - Default
   - TransparentFX

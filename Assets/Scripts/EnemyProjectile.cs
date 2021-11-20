@@ -33,7 +33,8 @@ public class EnemyProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        //Commented out part is supposed to make the object die when it hits the ground but it doesn't work for some reason.
+        if (other.CompareTag("Player") /**|| **other.CompareTag("Ground") **/ )
         {
             DestroyProjectile();
         }
@@ -44,6 +45,7 @@ public class EnemyProjectile : MonoBehaviour
             _player.DamagePlayer(damage);
         }
     }
+
     void DestroyProjectile()
     {
         Destroy(gameObject);

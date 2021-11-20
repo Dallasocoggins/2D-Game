@@ -27,6 +27,7 @@ public class PlayerController2D : MonoBehaviour
     public int extraJumpsValue;
     private int facingDirection = 1;
 
+
     public float dashCoolDown;
     public float dashSpeed;
     private float dashTime;
@@ -76,6 +77,7 @@ public class PlayerController2D : MonoBehaviour
         {
             isWalking = false;
 
+
         }
 
        if (isDashing)
@@ -94,11 +96,16 @@ public class PlayerController2D : MonoBehaviour
 
     }
 
+    public void refreshJump()
+    {
+        extraJumps = extraJumpsValue;
+    }
+
     private void Update()
     {
         if (isGrounded == true)
         {
-            extraJumps = extraJumpsValue;
+            refreshJump();
         }
 
         if (Input.GetButtonDown("Jump") && extraJumps > 0)
@@ -265,21 +272,23 @@ public class PlayerController2D : MonoBehaviour
         } 
     }
 
-   /** IEnumerator Dash(float dashTime, float dashCooldown)
-    {
-        Debug.Log("IsDashing true");
-        isDashing = true;
-        canDash = false;
-        Debug.Log("canDash false");
-        yield return new WaitForSeconds(dashTime);
-        Debug.Log("IsDashing false");
-        isDashing = false;
-        rb.velocity = Vector2.zero;
-        yield return new WaitForSeconds(dashCoolDown);
-        Debug.Log("canDash true");
-        canDash = true;
-    } 
-   **/
+    /** IEnumerator Dash(float dashTime, float dashCooldown)
+     {
+         Debug.Log("IsDashing true");
+         isDashing = true;
+         canDash = false;
+         Debug.Log("canDash false");
+         yield return new WaitForSeconds(dashTime);
+         Debug.Log("IsDashing false");
+         isDashing = false;
+         rb.velocity = Vector2.zero;
+         yield return new WaitForSeconds(dashCoolDown);
+         Debug.Log("canDash true");
+         canDash = true;
+     } 
+    **/
+
+    
 }
 
 
